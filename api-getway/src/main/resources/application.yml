@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-getway
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    order-service: /order/**
+#  ignored-services: order-service
+  ignored-patterns:
+            /*-service/api/v1/order/list,
+            /*-serivce/api/v1/product/list
