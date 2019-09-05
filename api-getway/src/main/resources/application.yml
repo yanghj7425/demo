@@ -12,7 +12,4 @@ eureka:
 zuul:
   routes:
     order-service: /order/**
-#  ignored-services: order-service
-  ignored-patterns:
-            /*-service/api/v1/order/list,
-            /*-serivce/api/v1/product/list
+    sensitive-headers:
