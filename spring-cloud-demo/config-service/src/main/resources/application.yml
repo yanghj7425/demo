@@ -1,0 +1,19 @@
+server:
+  port: 7001
+
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/sliz/spring-cloud-config-service
+          username: sliz
+          password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

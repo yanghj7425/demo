@@ -2,10 +2,12 @@ package com.yhj.product.service.impl;
 
 import com.yhj.product.domain.Product;
 import com.yhj.product.service.ProductService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Slf4j
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -22,6 +24,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> listProduct() {
+
+
         return new ArrayList<>(mapDao.values());
     }
 
