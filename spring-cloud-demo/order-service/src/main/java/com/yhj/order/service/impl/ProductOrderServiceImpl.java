@@ -8,8 +8,10 @@ import com.yhj.order.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -20,8 +22,16 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     private ProductClient productClient;
 
 
+//    @Autowired
+//    private RestTemplate restTemplate;
+
     @Override
     public ProductOrder save(Integer userId, Integer productId) {
+
+
+   //     restTemplate.getForObject("http://product-service/api/v1/product/find?id=" + productId, Map.class);
+
+
         ProductOrder productOrder = new ProductOrder();
         String result = productClient.findById(productId);
 

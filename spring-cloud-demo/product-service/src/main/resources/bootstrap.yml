@@ -1,8 +1,15 @@
 spring:
+  application:
+    name: product-service
   cloud:
     config:
       discovery:
-        service-id: config-service
+        service-id: CONFIG-SERVICE
         enabled: true
       profile: test
       label: master
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
