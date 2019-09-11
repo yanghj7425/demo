@@ -8,8 +8,3 @@ spring:
         enabled: true
       profile: test
       label: master
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
