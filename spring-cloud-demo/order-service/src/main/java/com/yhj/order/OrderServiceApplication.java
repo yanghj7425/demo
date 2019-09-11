@@ -16,11 +16,11 @@ import org.springframework.web.client.RestTemplate;
 public class OrderServiceApplication {
 
 
-//    @Bean
-//    @LoadBalanced
-//    public RestTemplate restTemplate() {
-//        return new RestTemplate();
-//    }
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 
 
     public static void main(String[] args) {

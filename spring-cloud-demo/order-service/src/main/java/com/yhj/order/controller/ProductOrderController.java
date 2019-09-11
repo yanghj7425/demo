@@ -5,15 +5,12 @@ import com.yhj.order.domain.ProductOrder;
 import com.yhj.order.service.ProductOrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("api/v1/order")
@@ -24,8 +21,8 @@ public class ProductOrderController {
     private ProductOrderService productOrderService;
 
 
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
+//    @Autowired
+//    private StringRedisTemplate stringRedisTemplate;
 
 
     @GetMapping("list")
@@ -46,16 +43,16 @@ public class ProductOrderController {
 
     private Object saveOrderFailure(Integer userId, Integer productId) {
 
-        String orderService = "ORDER_SERVICE";
-        String sendValue = stringRedisTemplate.opsForValue().get(orderService);
-        new Thread(() -> {
-            if (StringUtils.isEmpty(sendValue)) {
-                log.info("order service has down ,please fix right now");
-                stringRedisTemplate.opsForValue().set(orderService, "save-order-fail", 20, TimeUnit.SECONDS);
-            } else {
-                log.info("message has send");
-            }
-        }).start();
+//        String orderService = "ORDER_SERVICE";
+//        String sendValue = stringRedisTemplate.opsForValue().get(orderService);
+//        new Thread(() -> {
+//            if (StringUtils.isEmpty(sendValue)) {
+//                log.info("order service has down ,please fix right now");
+//                stringRedisTemplate.opsForValue().set(orderService, "save-order-fail", 20, TimeUnit.SECONDS);
+//            } else {
+//                log.info("message has send");
+//            }
+//        }).start();
 
 
         Map<String, Object> result = new HashMap<>();

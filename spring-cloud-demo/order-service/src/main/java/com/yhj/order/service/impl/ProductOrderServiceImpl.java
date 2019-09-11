@@ -29,7 +29,7 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     public ProductOrder save(Integer userId, Integer productId) {
 
 
-   //     restTemplate.getForObject("http://product-service/api/v1/product/find?id=" + productId, Map.class);
+   //     Map forObject = restTemplate.getForObject("http://product-service/api/v1/product/list/" + productId, Map.class);
 
 
         ProductOrder productOrder = new ProductOrder();
